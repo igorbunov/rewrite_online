@@ -272,7 +272,10 @@
             }
 
             if (highlightConfig.length > 0) {
-                $('#text').highlightTextarea({words: highlightConfig});
+                $('#text').highlightTextarea({
+                    caseSensitive: false,
+                    words: highlightConfig
+                });
             }
         });
     </script>
