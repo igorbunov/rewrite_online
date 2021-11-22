@@ -37,6 +37,8 @@ class ReportController extends Controller
 
         $moreThanOne = 0;
 
+        $activationController = new ActivationController();
+
         foreach($keyChecks as $i => $row) {
             if ($i > 100) {
                 break;
@@ -46,7 +48,7 @@ class ReportController extends Controller
                 $moreThanOne++;
             }
 
-            $keyChecks[$i]->isPayed = $this->checkActivation($row->key, false);
+            $keyChecks[$i]->isPayed = $activationController->checkActivation($row->key, false);
         }
 
         return view('old.report', [
