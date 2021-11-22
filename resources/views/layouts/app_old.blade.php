@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    @if (env('APP_ENV') != 'production'
-        and auth()->check()
-        and auth()->user()->email == env('CREATOR_EMAIL'))
+    @if (env('APP_ENV') == 'local' or (auth()->check() and auth()->user()->email == env('CREATOR_EMAIL')))
         {{-- не включаем --}}
     @else
         <!-- Global site tag (gtag.js) - Google Analytics -->
