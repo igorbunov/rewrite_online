@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    @if (config('app.env') != 'production'
+    @if (env('APP_ENV') != 'production'
         and auth()->check()
         and auth()->user()->email == env('CREATOR_EMAIL'))
         {{-- не включаем --}}
