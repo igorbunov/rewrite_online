@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class ActivationController extends Controller
 {
-    public function checkActivation($key, bool $updateStatistics = true): bool
+    public function checkActivation($key, bool $updateStatistics = true): int
     {
         $key = trim($key);
 
@@ -21,9 +21,9 @@ class ActivationController extends Controller
             KodeChecker::create(['key' => $key]);
         }
 
-        $isActivated = Activation::where(['key' => $key, 'is_payed' => '1'])->count();
+        $user = Activation::where(['key' => $key, 'is_payed' => '1'])->take(1)->get();
 
-        return $isActivated > 0;
+        return count($user);
     }
 
     public function successCallback(Request $request) {
@@ -75,7 +75,7 @@ class ActivationController extends Controller
         if ($payResponse !== false) {
             $order = json_decode($payResponse['order_id'], true);
 
-            if ($this->checkActivation($order['key'])) {
+            if ($this->checkActivation($order['key']) > 0) {
                 return view('old.activation_success');
             } else {
                 $ac = new Activation();
