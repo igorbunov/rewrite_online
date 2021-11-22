@@ -31,7 +31,7 @@ class ReportController extends Controller
             ->groupBy('key')
             ->orderBy('sort_dt', 'DESC')
             ->orderBy('cnt', 'DESC')
-            // ->limit(200)
+            ->limit(50)
             ->get();
 
         $moreThanOne = 0;
@@ -39,10 +39,6 @@ class ReportController extends Controller
         $activationController = new ActivationController();
 
         foreach($keyChecks as $i => $row) {
-            if ($i > 100) {
-                break;
-            }
-
             if ($row->cnt > 1) {
                 $moreThanOne++;
             }
