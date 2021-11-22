@@ -28,7 +28,7 @@ class NotifyAdminAfterUserRegisteredNotification
      */
     public function handle(Registered $event)
     {
-        $adminUser = User::where('email', env('CREATOR_EMAIL', ''))->first();
+        $adminUser = User::getAdminUser();
 
         if (empty($adminUser)) {
             return;

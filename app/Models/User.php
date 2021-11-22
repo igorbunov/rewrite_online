@@ -46,4 +46,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Project::class);
     }
+
+    public static function getAdminUser(): User
+    {
+        return User::where('email', env('CREATOR_EMAIL', ''))->first();
+    }
 }

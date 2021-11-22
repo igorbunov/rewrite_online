@@ -1,31 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SupportMessage;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SourceController;
 use App\Http\Controllers\KeywordController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SupportController;
 use App\Http\Controllers\SynonimController;
 use App\Http\Controllers\ActivationController;
 use App\Http\Controllers\UploadCounterController;
 
 // old code
 
-Route::get('/', function () {
-    return view('old.main');
-});
+Route::view('/', 'old.main');
 
-Route::get('activate', [ActivationController::class, 'preIndex']);
+Route::view('activate', 'old.pre_activate');
 Route::get('activate/{key}', [ActivationController::class, 'showPayButton']);
-Route::post('activationsuccess', [ActivationController::class, 'success']);
+Route::post('activationsuccess', [ActivationController::class, 'successCallback']);
+
 Route::get('check_activation/{key}', [ActivationController::class, 'checkActivation']);
 Route::get('check_login/{email}/{pass}', [ActivationController::class, 'checkLogin']);
-Route::post('get_pay_button', [ActivationController::class, 'getButton']);
-
-Route::get('support', [SupportMessage::class, 'index']);
-Route::post('support/send', [SupportMessage::class, 'send']);
-
-Route::post('download', [UploadCounterController::class, 'update']);
 
 Route::view('contacts', 'old.contacts');
 Route::view('return', 'old.return');
@@ -47,5 +41,10 @@ Route::group([
 
     Route::post('synonims/find', [SynonimController::class, 'find'])->name('synonims.find');
 
-    Route::get('report', [ActivationController::class, 'report']);
+    Route::get('support', [SupportController::class, 'index'])->name('support.index');
+    Route::post('support/send', [SupportController::class, 'send'])->name('support.send');
+
+    Route::post('download', [UploadCounterController::class, 'update']);
+
+    Route::get('report', ReportController::class);
 });

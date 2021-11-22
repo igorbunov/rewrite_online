@@ -8,13 +8,13 @@ class UploadCounterController extends Controller
 {
     public function update()
     {
-        $upl = UploadCounter::all()->take(1);
+        $uploads = UploadCounter::first();
 
-        if (count($upl) == 1) {
-            $res = $upl[0];
-            $res->downloads++;
-
-            $res->save();
+        if (empty($uploads)) {
+            UploadCounter::create(['downloads' => 1]);
+        } else {
+            $uploads->downloads++;
+            $uploads->save();
         }
     }
 }

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class KodeChecker extends Model
 {
-    //
+    protected $fillable = ['key'];
 }

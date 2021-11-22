@@ -273,7 +273,4 @@
             </div>
         </div>
     </section>
-
-    <div id="modal_form"></div>
-    <div id="overlay"></div>
 @endsection

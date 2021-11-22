@@ -49,7 +49,7 @@
 
             <b>Дата запуска: {{ $key->dt }}</b><br/>
 
-            @if ($key->isPayed > 0)
+            @if ($key->isPayed)
                 <span style="background-color: red;font-size: 18px;">Программа оплачена</span>
             @endif
         </div>
