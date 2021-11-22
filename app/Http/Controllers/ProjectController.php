@@ -37,7 +37,7 @@ class ProjectController extends Controller
         $doneKeysCount = 0;
         $unusedKeywords = '';
 
-        if (!empty($project->keywords) and !empty($project->text)) {
+        if (!empty($project->keywords)) {
             $keywordsService = new KeywordsService($project->keywords->toArray(), new TextService($project->text));
 
             $usedKeys = $keywordsService->calculateUsedKeywords();

@@ -32,7 +32,7 @@ class TextService
     private $nonUniqueWords = [];
     private $uniqueWords = [];
 
-    public function __construct(string $text)
+    public function __construct($text = '')
     {
         $this->text = mb_strtolower($text);
     }
