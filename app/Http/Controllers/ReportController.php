@@ -32,8 +32,7 @@ class ReportController extends Controller
             ->orderBy('sort_dt', 'DESC')
             ->orderBy('cnt', 'DESC')
             // ->limit(200)
-            ->get()
-            ->toArray();
+            ->get();
 
         $moreThanOne = 0;
 
