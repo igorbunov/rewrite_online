@@ -2,17 +2,16 @@
 
 @section('styles')
     <style>
-        .not-unique-text {
-            background-color: red;
-            color: #FFFFFF;
-            color: #adcad1;
-            padding: 0px 2px;
+        .non-unique-text {
+            margin-top: 2px;
+            padding: 8px 12px 0px 12px;
+            width: fit-content;
+            border-bottom: 8px solid #FFFF00;
         }
-
-        .keyword {
-            background-color: green;
-            color: #FFFFFF;
-            padding: 0px 2px;
+        .keywords {
+            padding: 8px 12px 0px 12px;
+            width: fit-content;
+            border-bottom: 8px solid #adcad1;
         }
     </style>
 @endsection
@@ -54,13 +53,13 @@
                     </div>
 
                     <div class="d-flex flex-column">
-                        <div style="padding: 8px 12px 0px 12px; width: fit-content; background-color: #adcad1;">
+                        <div class="keywords">
                             <label for="highlight-by-keys">Подсветка совпадений по ключам</label>
                             <input type="checkbox" id="highlight-by-keys"
                                 @if ($project->highlight_keys > 0) checked @endif
                                 style="margin-left: 6px;vertical-align: middle;">
                         </div>
-                        <div style="margin-top: 2px; padding: 8px 12px 0px 12px; width: fit-content; background-color: #FFFF00;">
+                        <div class="non-unique-text">
                             <label for="highlight-by-source">Подсветка совпадений по источникам</label>
                             <input type="checkbox" id="highlight-by-source"
                                 @if ($project->highlight_source > 0) checked @endif
