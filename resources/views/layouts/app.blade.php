@@ -1,15 +1,21 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67999752-2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    @if (config('app.env') != 'production'
+        and auth()->check()
+        and auth()->user()->email == env('CREATOR_EMAIL'))
+        {{-- не включаем --}}
+    @else
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67999752-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', 'UA-67999752-2');
-    </script>
+            gtag('config', 'UA-67999752-2');
+        </script>
+    @endif
 
     <meta name="yandex-verification" content="740e370e82dd3be0" />
 
