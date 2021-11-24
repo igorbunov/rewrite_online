@@ -15,6 +15,11 @@
         </script>
     @endif
 
+    <script data-ad-client="ca-pub-9224550511530884" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224550511530884"
+     crossorigin="anonymous"></script>
+
     <meta name="yandex-verification" content="740e370e82dd3be0" />
 
     <meta charset="utf-8">
