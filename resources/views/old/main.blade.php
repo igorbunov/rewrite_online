@@ -1,5 +1,13 @@
 @extends('layouts.app_old')
 
+@section('styles')
+    <style>
+        img {
+            cursor: pointer;
+        }
+    </style>
+@endsection
+
 @section('content')
     <header class="header">
         <div class="container">
@@ -147,4 +155,21 @@
             </div>
         </div>
     </section>
+
+    <div class="modal-popup modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div id="modal-content-div" class="modal-content"></div>
+        </div>
+    </div>
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+            $('img').click(function () {
+                $("#modal-content-div").html('<img src="' + $(this).attr('src') + '" onclick="$(\'.modal-popup\').modal(\'hide\')">');
+                $('.modal-popup').modal('show');
+            });
+        })
+    </script>
 @endsection
