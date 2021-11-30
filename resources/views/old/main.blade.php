@@ -14,14 +14,11 @@
         </div>
     </header>
 
-    <section class="content-block" style="border: 5px solid red;">
+    <section class="content-block">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 content-text video-plus-download">
-                    <p style="color:red; font-weight: bold;">ВНИМАНИЕ !!! ВАЖНОЕ ОБНОВЛЕНИЕ</p>
-                    <p>Разработана онлайн версия программы для рерайта</p>
-                    <p>По функционалу похожа с версией для компьютера (<b style="color:red;">старая версия скоро будет удалена</b>)</p>
-                    <a class="btn btn-lg btn-primary" href="{{ route('projects.index') }}">ПЕРЕЙТИ В ОНЛАЙН ВЕРСИЮ</a>
+                <div class="col-lg-12 content-text">
+                    <a class="btn btn-lg btn-primary" href="{{ route('projects.index') }}">НАЧАТЬ ПОЛЬЗОВАТЬСЯ</a>
                 </div>
             </div>
             <div class="row">
@@ -32,55 +29,14 @@
         </div>
     </section>
 
-    <br>
-    <br>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224550511530884"
-        crossorigin="anonymous"></script>
-    <!-- Шапка на рерайте -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-9224550511530884"
-        data-ad-slot="9527998559"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
-
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 content-text video-plus-download">
-                    <p>Далее про версию для компьюета (более не поддерживается!)</p>
-                    <a id="file-download-btn" class="btn btn-large btn-success" href="{{ env('FILE_DOWNLOAD_LINK') }}" target="blank">Скачать программу</a>
-                    <a class="btn btn-large btn-success" href="{{ url('activate') }}">Активация</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 content-text">
-                    <p>Видео по программе:</p><iframe width="420" height="315" src="{{ env('VIDEO_LINK') }}" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
     <section class="content-block">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 content-text data1">
-                    <div class="pic pic-all" data-pik="all"></div>
+                    <img src="{{ asset('online_images/projects.png') }}" style="width: 100%;">
                 </div>
                 <div class="col-lg-6 ml-auto content-text data2">
-                    <p>Внешний вид окна программы выглядит примерно так. Удобное расположение редактора слева и примеры текстов для рерайта справа.</p>
+                    <p>На главной странице вас ждет список проектов</p>
                 </div>
             </div>
         </div>
@@ -90,10 +46,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 content-text data2">
-                    <p>Форма для добавления ключевых фраз и количества их повторений. Здесь также видно сколько раз ключевая фраза встречается в тексте.</p>
+                    <p>Быстрое создание нового проекта</p>
                 </div>
-                <div class="col-lg-6 ml-auto content-text data1">
-                    <div class="pic pic-keys" data-pik="keys"></div>
+                <div class="col-lg-6 content-text data1">
+                    <img src="{{ asset('online_images/creation.png') }}" style="width: 100%;">
                 </div>
             </div>
         </div>
@@ -103,10 +59,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 content-text data1">
-                    <div class="pic pic-plan" data-pik="plan"></div>
+                    <img src="{{ asset('online_images/buttons.png') }}" style="width: 100%;">
                 </div>
                 <div class="col-lg-6 ml-auto content-text data2">
-                    <p>Каждый работник в сфере рерайта знает, что первое необходимое средство для создания качественного текста с заголовками и подзаголовками необходим план. Поэтому наша программа для рерайта оснащена удобным окошком для написания плана на который можно посмотреть или отредактировать, нажав всего одну кнопку.</p>
+                    <p>Следующим шагом нужно будет перейти в редактирование вашего проекта и добавить ключевые слова и источники текстов</p>
                 </div>
             </div>
         </div>
@@ -116,10 +72,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 content-text data2">
-                    <p>Семь вкладок с редакторами, для вставки оригинальных текстов из сайтов. Помогут сэкономить время на постоянных переключениях между редактором и браузером. Также можно сразу посмотреть синонимы для выделенных слов или скопировать выделенный текст в главный редактор.</p>
+                    <p>На странице ключевых слов вы добавляете слова и кол-во необходимых повторений в тексте</p>
                 </div>
                 <div class="col-lg-6 ml-auto content-text data1">
-                    <div class="pic pic-tabs" data-pik="tabs"></div>
+                    <img src="{{ asset('online_images/keywords.png') }}" style="width: 100%;">
                 </div>
             </div>
         </div>
@@ -129,10 +85,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 content-text data1">
-                    <div class="pic pic-highlighting" data-pik="highlighting"></div>
+                    <img src="{{ asset('online_images/sources.png') }}" style="width: 100%;">
                 </div>
                 <div class="col-lg-6 ml-auto content-text data2">
-                    <p>Внешний вид главного окна с подкрашиванием совпадающих слов, ошибок и подсветкой ключевых фраз дает возможность сразу видеть какие слова повторяются, какие слова ключевые. Вы сможете спокойно добиться 100% уникальности, если захотите.</p>
+                    <p>На странице источников можно добавить тексты с тех статей откуда вы будете черпать информацию</p>
                 </div>
             </div>
         </div>
@@ -142,10 +98,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 content-text data2">
-                    <p>Для поиска необходимых слов сделан поиск, который находит и подсвечивает любые совпадения с введенным текстом.</p>
+                    <p>После чего можете приступать к работе. На странице редактирования проекта видны необходимые ключевые слова.
+                        Также есть поле для ввода вашего оригинального текста. Все ключевые слова подсвечиваются, также как и слова
+                        совпавшие в ваших источниках.<br/>Неиспользуемые ключи обновляются после сохранения проекта
+                    </p>
                 </div>
                 <div class="col-lg-6 ml-auto content-text data1">
-                    <div class="pic pic-search" data-pik="search"></div>
+                    <img src="{{ asset('online_images/project.png') }}" style="width: 100%;">
                 </div>
             </div>
         </div>
@@ -155,10 +114,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 content-text data1">
-                    <div class="pic pic-context_menu" data-pik="context_menu"></div>
+                    <img src="{{ asset('online_images/texts.png') }}" style="width: 100%;">
                 </div>
                 <div class="col-lg-6 ml-auto content-text data2">
-                    <p>Для форматирования текста сделано удобное меню. В основном используется для быстрой замены слова его синонимом.</p>
+                    <p>В любой момент можно посмотреть какой текст есть в ваших источниках</p>
                 </div>
             </div>
         </div>
@@ -168,10 +127,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 content-text data2">
-                    <p>Больше не нужно искать синонимы в интернете. Огромная база синонимов существенно сократит время выполнения задания.</p>
+                    <p>Добавлено синонимы для более миллиона русских слов. Пользоваться очень просто, выделяете текст,
+                        а потом нажимаете на ссылку <a style="text-decoration: underline;" href="#">синонимы (alt + enter)</a>
+                    </p>
                 </div>
                 <div class="col-lg-6 ml-auto content-text data1">
-                    <div class="pic pic-synonims" data-pik="synonims"></div>
+                    <img src="{{ asset('online_images/synonims.png') }}" style="width: 100%;">
                 </div>
             </div>
         </div>
@@ -180,110 +141,8 @@
     <section class="content-block">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 content-text data1">
-                    <div class="pic pic-unused_keys" data-pik="unused_keys"></div>
-                </div>
-                <div class="col-lg-6 ml-auto content-text data2">
-                    <p>Всегда перед глазами виден список ключевых фраз, которые еще не использовались.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 content-text data2">
-                    <p>История изменений, которую можно просмотреть и в любой момент перейти к сохраненной части. Больше не нужно искать предыдущий вариант текста если после правки уникальность снизилась. Несколько нажатий и Ваш текст восстановлен.</p>
-                </div>
-                <div class="col-lg-6 ml-auto content-text data1">
-                    <div class="pic pic-history" data-pik="history"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 content-text data1">
-                    <div class="pic pic-buttons" data-pik="buttons"></div>
-                </div>
-                <div class="col-lg-6 ml-auto content-text data2">
-                    <p>Удобные кнопки для частых действий заменят вам надоевшие CTRL+C и CTRL+V</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 content-text data2">
-                    <p>Простое сохранение всего проекта (включая историю действий, план и ключевые слова). Больше не нужно боятся, что Ваша работа пропадет если вы забыли ее сохранить, функция "открыть последний документ" все восстановит. Также можно сохранить финальный текст в word документ.</p>
-                </div>
-                <div class="col-lg-6 ml-auto content-text data1">
-                    <div class="pic pic-save" data-pik="save"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 content-text data1">
-                    <div class="pic pic-turn_off_highlighting" data-pik="turn_off_highlighting"></div>
-                </div>
-                <div class="col-lg-6 ml-auto content-text data2">
-                    <p>Если подсветка отвлекает или раздражает, можно ее отключить раз и навсегда.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 content-text data2">
-                    <p>Быстрые ссылки для переходов на топовые текстовые сайты. Больше не нужно помнить все ссылки на нужные сайты проверки, один клик и браузер по умолчанию откроет Вам нужную страничку.</p>
-                </div>
-                <div class="col-lg-6 ml-auto content-text data1">
-                    <div class="pic pic-sites" data-pik="sites"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 content-text data1">
-                    <div class="pic pic-timer" data-pik="timer"></div>
-                </div>
-                <div class="col-lg-6 content-text ml-auto data2">
-                    <p>Для учета проработанного времени добавлен таймер.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 content-text">
-                    <p>Видео по программе:</p><iframe width="420" height="315" src="{{ env('VIDEO_LINK') }}" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-block">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 content-text video-plus-download">
-                    <a id="file-download-btn" class="btn btn-large btn-success" href="{{ env('FILE_DOWNLOAD_LINK') }}" target="blank">Скачать программу</a>
-                    <a class="btn btn-large btn-success" href="{{ url('activate') }}">Активация</a>
+                <div class="col-lg-12 content-text">
+                    <a class="btn btn-lg btn-primary" href="{{ route('projects.index') }}">НАЧАТЬ ПОЛЬЗОВАТЬСЯ</a>
                 </div>
             </div>
         </div>

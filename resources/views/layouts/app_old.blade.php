@@ -15,11 +15,6 @@
         </script>
     @endif
 
-    <script data-ad-client="ca-pub-9224550511530884" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224550511530884"
-     crossorigin="anonymous"></script>
-
     <meta name="yandex-verification" content="740e370e82dd3be0" />
 
     <meta charset="utf-8">
@@ -61,7 +56,7 @@
         <br/>
         <br/>
 
-        <section class="content-block">
+        {{-- <section class="content-block">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 content-text">
@@ -69,12 +64,11 @@
                         <a href="{{ url('/contacts') }}">Контакты</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="{{ url('/return') }}">Условия возврата</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="{{ url('/about') }}">О компании</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        {{-- <a href="{{ url('/support') }}">Поддержка</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --}}
                         <a href="{{ url('/license') }}">Пользовательское соглашение</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
     </div>
 
 
