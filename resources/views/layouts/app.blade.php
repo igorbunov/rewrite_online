@@ -43,10 +43,17 @@
     <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}" type="image/x-icon">
 
     @yield('styles')
+
+    <link rel="stylesheet" href="{{ asset('dark-theme/darktheme.css') }}"/>
+
+    <script>
+        // dark theme
+    </script>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        {{-- <nav id="top-navbar" class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm"> --}}
+        <nav id="top-navbar" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('projects.index') }}">
                     {{ config('app.name', 'Рерайт онлайн') }}
@@ -77,6 +84,13 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item">
+                                <div class="custom-control custom-switch pt-2 pr-3">
+                                    <input type="checkbox" class="custom-control-input" id="darkSwitch">
+                                    <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+                                </div>
+                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/') }}">{{ __('Главная') }}</a>
                             </li>
@@ -135,5 +149,8 @@
     </script>
 
     @yield('scripts')
+
+    <script src="{{ asset('dark-theme/theme.js') }}"></script>
+    <script src="{{ asset('dark-theme/darkswitch.js') }}"></script>
 </body>
 </html>

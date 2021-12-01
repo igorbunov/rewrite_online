@@ -11,7 +11,8 @@
         .keywords {
             padding: 8px 12px 0px 12px;
             width: fit-content;
-            border-bottom: 8px solid #adcad1;
+            /* border-bottom: 8px solid #adcad1; */
+            border-bottom: 8px solid #606768;
         }
     </style>
 @endsection
@@ -258,7 +259,8 @@
 
             if (allKeywordsAsArray.length > 0) {
                 highlightConfig.push({
-                    color: '#adcad1',
+                    // color: '#adcad1',
+                    color: '#606768',
                     words: allKeywordsAsArray
                 });
             }
