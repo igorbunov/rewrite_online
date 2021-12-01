@@ -40,12 +40,12 @@
 
                     <div class="row">
                         <label for="text" class="col-md-5 col-form-label text-md-left">Неиспользуемые ключи:</label>
-                        <div class="col-md-7 pt-2">{{ $unusedKeywords }}</div>
+                        <div id="unused-keywords-div" class="col-md-7 pt-2">{{ $unusedKeywords }}</div>
                     </div>
 
                     <div class="row">
                         <label for="text" class="col-md-5 col-form-label text-md-left">{{ __('Выполнение по ключевым словам:') }}</label>
-                        <div class="col-md-7 pt-2">{{ $keywordsCompletion }}</div>
+                        <div id="keywords-completion-div" class="col-md-7 pt-2">{{ $keywordsCompletion }}</div>
                     </div>
 
                     <div class="d-flex">
@@ -125,9 +125,6 @@
                                 <div class="pt-2">
                                     <div class="w-100">
                                         <textarea cols="30" rows="20" class="form-control" readonly>{{ $source->text }}</textarea>
-
-                                        {{-- не безопасно --}}
-                                        {{-- @php echo str_replace("\n", '<br/>', $source->text); @endphp --}}
                                     </div>
                                 </div>
                             </div>
@@ -254,6 +251,25 @@
                 $('#highlight_source').val(val);
                 $('#store-text-btn').click();
             });
+
+            setInterval(function() {
+                let text = $('#text').val().trim();
+
+                $.ajax({
+                    method: "POST",
+                    url: "{{ route('projects.recalc_done_keywords', $project) }}",
+                    data: {
+                        text: text
+                    }
+                })
+                .done(function(msg) {
+                    if (msg.success) {
+                        $('#keywords-completion-div').text(msg.keywordsCompletion);
+                        $('#unused-keywords-div').text(msg.unusedKeywords);
+                    }
+                })
+                .fail(function() {});
+            }, 30 * 1000);
 
             let highlightConfig = [];
 

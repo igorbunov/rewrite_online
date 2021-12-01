@@ -34,6 +34,7 @@ Route::group([
     'middleware' => ['auth', 'verified']
 ], function () {
     Route::post('projects/{project}/text', [ProjectController::class, 'updateText'])->name('projects.text');
+    Route::post('projects/{project}/recalc_keywords', [ProjectController::class, 'recalcDoneKeywords'])->name('projects.recalc_done_keywords');
     Route::resource('projects', ProjectController::class);
 
     Route::resource('projects.keywords', KeywordController::class);

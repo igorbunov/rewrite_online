@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use Illuminate\Http\Request;
 use App\Services\TextService;
 use App\Services\KeywordsService;
 use App\Http\Requests\StoreProjectRequest;
@@ -116,5 +117,50 @@ class ProjectController extends Controller
         $project->update($request->validated());
 
         return redirect()->route('projects.edit', $project); // ->withStatus('Данные сохранены')
+    }
+
+    public function recalcDoneKeywords(Project $project, Request $request)
+    {
+        abort_if(auth()->id() != $project->user_id, 401);
+
+        if (!$request->has('text')) {
+            return response()->json(['success' => false]);
+        }
+
+        $project->update(['text' => $request->post('text', '')]);
+
+        $project->load('keywords');
+
+        $doneKeysCount = 0;
+        $unusedKeywords = '';
+
+        if (!empty($project->keywords)) {
+            $keywordsService = new KeywordsService($project->keywords->toArray(), new TextService($project->text));
+
+            $usedKeys = $keywordsService->calculateUsedKeywords();
+
+            foreach ($project->keywords as $keyword) {
+                foreach ($usedKeys as $keyw) {
+                    if ($keyword->id == $keyw['id']) {
+                        if ($keyword->applied != $keyw['applied']) {
+                            $keyword->applied = $keyw['applied'];
+                            $keyword->save();
+                        }
+
+                        if ($keyw['applied'] >= $keyword->needed) {
+                            $doneKeysCount++;
+                        }
+                    }
+                }
+            }
+
+            $unusedKeywords = $keywordsService->loadUnusedKeywordsByProjectAsString();
+        }
+
+        return response()->json([
+            'success' => true,
+            'unusedKeywords' => $unusedKeywords,
+            'keywordsCompletion' => $doneKeysCount . ' из ' . $project->keywords->count()
+        ]);
     }
 }

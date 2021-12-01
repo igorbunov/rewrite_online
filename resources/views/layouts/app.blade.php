@@ -45,14 +45,9 @@
     @yield('styles')
 
     <link rel="stylesheet" href="{{ asset('dark-theme/darktheme.css') }}"/>
-
-    <script>
-        // dark theme
-    </script>
 </head>
 <body>
     <div id="app">
-        {{-- <nav id="top-navbar" class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm"> --}}
         <nav id="top-navbar" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('projects.index') }}">
