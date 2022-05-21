@@ -13,6 +13,9 @@
 
             gtag('config', 'UA-67999752-2');
         </script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224550511530884"
+        crossorigin="anonymous"></script>
     @endif
 
     <meta name="yandex-verification" content="740e370e82dd3be0" />
