@@ -1,4 +1,4 @@
-try here: http://rewrite.su/<br/>
+try here: https://rewrite.su/<br/>
 
 composer install<br/>
 npm install && npm run dev<br/>
